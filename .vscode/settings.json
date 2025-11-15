@@ -1,0 +1,11 @@
+{
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+  "workbench.iconTheme": "material-icon-theme",
+  "files.autoSave": "onFocusChange",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": true
+}
