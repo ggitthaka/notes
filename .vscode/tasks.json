@@ -102,7 +102,7 @@
       "problemMatcher": [],
       "group": "build",
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "detail": "Runs the Next.js development server with live reload for local development."
+      "detail": "Starts the Web app in Next.js development mode with hot reloading for local iteration."
     },
     {
       "label": "next.js(web) > build",
@@ -111,7 +111,7 @@
       "problemMatcher": [],
       "group": "build",
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "detail": "Builds the Next.js application for production deployment."
+      "detail": "Builds the Web application for production, generating optimized static and server assets."
     },
     {
       "label": "next.js(web) > start",
@@ -120,7 +120,7 @@
       "problemMatcher": [],
       "group": "build",
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "detail": "Starts the Next.js production server using the built application."
+      "detail": "Runs the Web production server using the previously generated build output."
     },
     {
       "label": "next.js(web) > lint",
@@ -129,14 +129,50 @@
       "problemMatcher": [],
       "group": "test",
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "detail": "Runs ESLint to check for code quality and style issues in the Next.js project."
+      "detail": "Runs ESLint on the Web app to identify code quality issues and enforce project standards."
     },
+    {
+      "label": "next.js(api) > dev",
+      "type": "shell",
+      "command": "pnpm --filter api dev",
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "detail": "Starts the API service in development mode with hot reloading for rapid backend iteration."
+    },
+    {
+      "label": "next.js(api) > build",
+      "type": "shell",
+      "command": "pnpm --filter api build",
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "detail": "Compiles the API project for production, optimizing route handlers and server code."
+    },
+    {
+      "label": "next.js(api) > start",
+      "type": "shell",
+      "command": "pnpm --filter api start",
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "detail": "Runs the API production server using the optimized build output."
+    },
+    {
+      "label": "next.js(api) > lint",
+      "type": "shell",
+      "command": "pnpm --filter api lint",
+      "problemMatcher": [],
+      "group": "test",
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "detail": "Runs ESLint on the API project to ensure backend code quality and consistency."
+    },
+
     {
       "label": "pnpm > outdated",
       "type": "shell",
       "command": "pnpm outdated",
       "problemMatcher": [],
-      "group": "none",
       "presentation": { "reveal": "always", "panel": "dedicated" },
       "detail": "Lists dependencies that have newer versions available."
     },
@@ -145,7 +181,6 @@
       "type": "shell",
       "command": "pnpm update",
       "problemMatcher": [],
-      "group": "none",
       "presentation": { "reveal": "always", "panel": "dedicated" },
       "detail": "Updates all project dependencies to their latest compatible versions."
     },
@@ -154,7 +189,6 @@
       "type": "shell",
       "command": "pnpm i",
       "problemMatcher": [],
-      "group": "none",
       "presentation": { "reveal": "always", "panel": "dedicated" },
       "detail": "Installs all project dependencies as defined in the package.json file."
     }
