@@ -1,0 +1,168 @@
+{
+  "folders": [
+    {
+      "path": "../../../.notes",
+      "name": ".notes"
+    },
+    {
+      "path": ".",
+      "name": "api"
+    }
+  ],
+  "settings": {
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "onFocusChange",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleAttributePerLine": true,
+    "prettier.singleQuote": true
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "GitHub.github-vscode-theme",
+      "formulahendry.auto-rename-tag",
+      "PKief.material-icon-theme",
+      "bradlc.vscode-tailwindcss",
+      "jmkrivocapich.drawfolderstructure"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "options": {
+      "env": {
+        "DIFF_LOG_PATH": "${workspaceFolder:.notes}/trash/diff.log",
+        "COMMITS_LOG_PATH": "${workspaceFolder:.notes}/trash/commits.log"
+      }
+    },
+    "tasks": [
+      {
+        "label": "git > save staged diff",
+        "type": "shell",
+        "command": "git diff --cached > $DIFF_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves the current staged changes into a diff log file for reference or review."
+      },
+      {
+        "label": "git > fetch all",
+        "type": "shell",
+        "command": "git fetch --all",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Fetches updates from all remotes and branches without merging."
+      },
+      {
+        "label": "git > create empty commit",
+        "type": "shell",
+        "command": "git commit --allow-empty -m 'chore(`/`): empty commit'",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Creates an empty commit, useful for triggering workflows or CI/CD runs."
+      },
+      {
+        "label": "git > save staging..development --pretty",
+        "type": "shell",
+        "command": "git log staging..development --pretty=format:\"%s%n%b%n_%n\" > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves detailed commit messages between the development and staging branches in a readable format."
+      },
+      {
+        "label": "git > save staging..development --oneline",
+        "type": "shell",
+        "command": "git log staging..development --oneline > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves a condensed one-line list of commits between development and staging branches."
+      },
+      {
+        "label": "git > save production..staging --pretty",
+        "type": "shell",
+        "command": "git log production..staging --pretty=format:\"%s%n%b%n_%n\" > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves detailed commit messages between the staging and production branches for review before release."
+      },
+      {
+        "label": "git > save production..staging --oneline",
+        "type": "shell",
+        "command": "git log production..staging --oneline > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves a short one-line summary of commits between staging and production branches."
+      },
+      {
+        "label": "git > save development..production --pretty",
+        "type": "shell",
+        "command": "git log development..production --pretty=format:\"%s%n%b%n_%n\" > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves detailed commit messages between the production and development branches for backtracking changes."
+      },
+      {
+        "label": "git > save development..production --oneline",
+        "type": "shell",
+        "command": "git log development..production --oneline > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves a one-line summary of commits between production and development branches."
+      },
+      {
+        "label": "git > save all branches --pretty",
+        "type": "shell",
+        "command": "git log production..development --pretty=format:\"%s%n%b%n_%n\" > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves detailed commit logs spanning from production to development."
+      },
+      {
+        "label": "git > save all branches --oneline",
+        "type": "shell",
+        "command": "git log production..development --oneline > $COMMITS_LOG_PATH",
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Saves one-line commit summaries covering all branches from production to development."
+      },
+      {
+        "label": "next.js > dev",
+        "type": "shell",
+        "command": "pnpm dev",
+        "problemMatcher": [],
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Starts the Web app in Next.js development mode with hot reloading for local iteration."
+      },
+      {
+        "label": "next.js > build",
+        "type": "shell",
+        "command": "pnpm build",
+        "problemMatcher": [],
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Builds the Web application for production, generating optimized static and server assets."
+      },
+      {
+        "label": "next.js > start",
+        "type": "shell",
+        "command": "pnpm start",
+        "problemMatcher": [],
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Runs the Web production server using the previously generated build output."
+      },
+      {
+        "label": "next.js > lint",
+        "type": "shell",
+        "command": "pnpm lint",
+        "problemMatcher": [],
+        "group": "test",
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "detail": "Runs ESLint on the Web app to identify code quality issues and enforce project standards."
+      }
+    ]
+  }
+}
