@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "GitHub.github-vscode-theme",
+    "formulahendry.auto-rename-tag",
+    "PKief.material-icon-theme",
+    "bradlc.vscode-tailwindcss",
+    "jmkrivocapich.drawfolderstructure"
+  ]
+}
