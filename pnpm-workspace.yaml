@@ -1,0 +1,7 @@
+packages:
+  - "apps/clients/web"
+  - "apps/clients/mobile"
+  - "apps/clients/desktop"
+  - "apps/servers/api"
+  - "apps/servers/socket"
+
