@@ -19,6 +19,10 @@
       }
     ],
     "paths": {
+      "@components/page": ["./exports/components/page"],
+      "@components/layout": ["./exports/components/layout"],
+      "@styles/page": ["./exports/styles/page"],
+      "@styles/layout": ["./exports/styles/layout"],
       "@/*": ["./*"]
     }
   },
