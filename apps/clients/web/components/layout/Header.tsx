@@ -1,11 +1,20 @@
-interface Props {
-  className: string;
+import { ReactNode } from 'react';
+
+export interface Props {
+  className?: string;
+  children: {
+    brand: ReactNode;
+    nav: ReactNode;
+  };
 }
 
-export default function Header({ className }: Props) {
+export default function Header({ className, children }: Props) {
   return (
     <header
       className={`h-16 flex flex-row items-center justify-start ${className}`}
-    ></header>
+    >
+      {children.brand}
+      {children.nav}
+    </header>
   );
 }
