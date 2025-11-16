@@ -1,0 +1,45 @@
+.Header,
+.Main {
+  width: 100%;
+}
+
+.Header {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+
+.Header::after {
+  content: '';
+  display: block;
+  z-index: -1;
+  width: 100%;
+  height: 64px;
+  background-color: var(--color-accent);
+  backdrop-filter: blur(--size-backdrop);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px solid var(--color-highlight);
+}
+
+@media (max-width: 768px) {
+  .Header,
+  .Main {
+    padding-inline: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1536px) {
+  .Header,
+  .Main {
+    padding-inline: 32px;
+  }
+}
+
+@media (min-width: 1537px) {
+  .Header,
+  .Main {
+    padding-inline: calc(64px + (100vw - 1537px) / 2);
+  }
+}
