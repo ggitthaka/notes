@@ -19,6 +19,13 @@
       }
     ],
     "paths": {
+      "@components/page": ["./exports/components/page"],
+      "@components/layout": ["./exports/components/layout"],
+      "@components/shared": ["./exports/components/shared"],
+      "@styles/page": ["./exports/styles/page"],
+      "@styles/layout": ["./exports/styles/layout"],
+      "@styles/shared": ["./exports/styles/shared"],
+      "@library/hooks": ["./exports/library/hooks"],
       "@/*": ["./*"]
     }
   },
